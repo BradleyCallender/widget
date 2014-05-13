@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.manipulator.js"></script>
+    <title>Text Manipulator</title>
+	
+	
+	<!---------------Stylesheets---------------->
+   <link rel="stylesheet" type="text/css" href="css/site.css" />
+
+  </head>
+  <body>
+
+  	<table>
+	<tr>
+	<td></td>
+	<td></td>
+	<td><button id="clearhighlightbutton"><span>Pen</span>Clear Highlighted Text</button></td>
+	<td><button id="fontchange"><span>Pen</span>Change font style</button>
+	<div id="fonthold">
+	<form>
+    <select id="fontchoice"> 
+        <option class="optionstyle" value="Arial">Arial</option>
+        <option class="optionstyle" value="Verdana ">Verdana </option>
+        <option class="optionstyle" value="Impact ">Impact </option>
+        <option class="optionstyle" value="Comic Sans MS">Comic Sans MS</option>
+		<option class="optionstyle" value="Berlin Sans FB">Berlin Sans FB</option>
+		<option class="optionstyle" value="Times Roman">Times Roman</option>
+		<option class="optionstyle" value="BRUSH SCRIPT MT">Brush Script MT</option>
+		<option class="optionstyle" value="algerian">algerian</option>
+		<option class="optionstyle" value="TREBUCHET MS">Trebuchet MS</option>
+		
+    </select>
+    
+    <select id="size">
+        <option class="optionstyle" value="8">8</option>
+        <option class="optionstyle" value="10">10</option>
+		<option class="optionstyle" value="12">12</option>
+		<option class="optionstyle" value="14">14</option>
+		<option class="optionstyle" value="16">16</option>
+		<option class="optionstyle" value="18">18</option>
+		<option class="optionstyle" value="20">20</option>
+		<option class="optionstyle" value="22">22</option>
+		<option class="optionstyle" value="24">24</option>
+		<option class="optionstyle" value="26">26</option>
+        <option class="optionstyle" value="28">28</option>
+        <option class="optionstyle" value="30">30</option>
+    </select>
+	
+	    <select id="color">
+        <option style="background:black; color:green;" value="Green">Green</option>
+        <option style="background:black; color:yellow;" value="Yellow">Yellow</option>
+		<option style="background:black; color:red;" value="Red">Red</option>
+		<option style="background:black; color:purple;" value="Purple">Purple</option>
+		<option style="background:black; color:orange;" value="Orange">Orange</option>
+    
+	</select>
+	
+</form>
+	<button id="doneformat">Done Font Formatting</button>
+	</div>
+	</td>
+	<td><button id="resetbutton"onClick="window.location.reload()"><span>Pen</span> Reset all text</button></td>
+	</tr>
+	</table>
+	
+    <div id="textholder">
+      <p>
+       In physics, string theory is a theoretical framework in which the point-like particles of particle physics are replaced by one-dimensional objects called strings. In string theory, the different types of observed elementary particles arise from the different quantum states of these strings. In addition to the types of particles postulated by the standard model of particle physics, string theory naturally incorporates gravity, and is therefore a candidate for a theory of everything, a self-contained mathematical model that describes all fundamental forces and forms of matter. Aside from this hypothesized role in particle physics, string theory is now widely used as a theoretical tool in physics, and it has shed light on many aspects of quantum field theory and quantum gravity.
+The earliest version of string theory, called bosonic string theory, incorporated only the class of particles known as bosons, although this theory developed into superstring theory, which posits that a connection (a "supersymmetry") exists between bosons and the class of particles called fermions. String theory requires the existence of extra spatial dimensions for its mathematical consistency. In realistic physical models constructed from string theory, these extra dimensions are typically compactified to extremely small scales.
+String theory was first studied in the late 1960s as a theory of the strong nuclear force before being abandoned in favor of the theory of quantum chromodynamics. Subsequently, it was realized that the very properties that made string theory unsuitable as a theory of nuclear physics made it an outstanding candidate for a quantum theory of gravity. Five consistent versions of string theory were developed before it was realized in the mid-1990s that these theories could be obtained as different limits of a conjectured eleven-dimensional theory called M-theory.
+Many theoretical physicists (among them Stephen Hawking, Edward Witten, and Juan Maldacena) believe that string theory is a step towards the correct fundamental description of nature. This is because string theory allows for the consistent combination of quantum field theory and general relativity, agrees with general insights in quantum gravity such as the holographic principle and black hole thermodynamics, and because it has passed many non-trivial checks of its internal consistency. According to Hawking in particular, "M-theory is the only candidate for a complete theory of the universe." Other physicists, such as Richard Feynman, Roger Penrose, and Sheldon Lee Glashow, have criticized string theory for not providing novel experimental predictions at accessible energy scales and say that it is a failure as a theory of everything.
+      
+	  - Text from wikipedia
+	  </p>
+
+
+    </div>
+	
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+          
+          $('#clearhighlightbutton').click(function() {
+              $('#textholder').retrivehighlighter().clearhighlightedarea();
+          });
+
+          $('#textholder').textmanipulator();
+      });
+	  
+        $("#fontchange").click(function() {
+            jQuery("#fonthold").toggle("fast");
+    });
+	
+	$("#fontchoice").change(function() {
+    $('.highlighted').css("font-family", $(this).val());
+
+});
+
+$("#size").change(function() {
+    $('.highlighted').css("font-size", $(this).val() + "px");
+});
+
+$("#color").change(function() {
+    $('.highlighted').css("color", $(this).val());
+});
+
+
+$("#doneformat").click(function() {
+ $('#textholder').retrivehighlighter();
+ $('.highlighted').css("background-color","transparent")
+            jQuery("#fonthold").toggle("slow");
+    });
+    </script>
+
+  </body>
+</html>

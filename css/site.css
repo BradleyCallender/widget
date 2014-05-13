@@ -1,0 +1,96 @@
+   body {
+   background:white url('../images/bw.png') no-repeat;
+   }
+   
+   #textholder {
+          width: 960px;
+          margin: 30px auto;
+          padding: 20px;
+          background:transparent;
+          text-align: justify;
+		  color:white;
+      }
+	  
+	  #textholder p {
+	  font-size:18px;
+	  font-family: 'Berlin Sans FB', Arial, Helvetica, sans-serif;
+	  font-weight:normal;
+	  line-height:1.5;
+	  }
+	  
+   
+button {
+cursor:pointer;
+background:transparent;
+padding:15px 10px;
+color:white;
+border-radius:3px;
+border:2px solid white;
+letter-spacing:1.5px;
+font-family: 'Berlin Sans FB', Arial, Helvetica, sans-serif;
+text-transform:uppercase;
+margin-left:20px;
+}		  
+		  
+		  
+button:hover{
+border:none;
+
+}
+		 
+#clearhighlightbutton span {
+background: url('../images/bunch.png') -5px -223px no-repeat;
+margin-right:5px;
+color:transparent;
+} 
+		 
+#fontchange span {
+background: url('../images/bunch.png') -5px -275px no-repeat;
+margin-right:5px;
+color:transparent;
+} 
+		 
+#resetbutton span {
+background: url('../images/reset.gif') no-repeat;
+margin-right:5px;
+color:transparent;
+} 
+		 
+#fonthold{
+width:300px;
+background:transparent;
+height:auto;
+display:none;
+margin-top:15px;
+}		
+
+table{
+margin-right:auto;
+margin-left:auto;
+background:transparent;
+}
+		  
+#fonthold form select {
+border:1px solid white;
+color:white;
+font-size:16px;
+background:transparent;
+height:50px;
+}	  
+		  		
+.optionstyle{
+background:transparent;
+color:red;
+}				
+		  
+		  
+::selection {
+	background: white;
+	}
+::-moz-selection {
+	background: white;
+}
+
+#doneformat {
+margin-top:20px;
+}
